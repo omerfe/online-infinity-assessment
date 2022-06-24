@@ -3,37 +3,21 @@
   "info": {
     "name": "Testimonial",
     "displayName": "Testimonial",
-    "icon": "user-check"
+    "icon": "user-check",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": false
-    },
-    "picture": {
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": false
+      ]
     },
     "text": {
       "type": "text"
-    },
-    "authorName": {
-      "type": "string"
-    },
-    "authorTitle": {
-      "type": "string"
-    },
-    "link": {
-      "type": "string"
     }
   }
 }

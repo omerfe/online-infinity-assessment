@@ -8,14 +8,14 @@ const ButtonContent = ({ button, appearance, compact }) => {
     <div
       className={classNames(
         // Common classes
-        "block w-full lg:w-auto text-center uppercase tracking-wide font-semibold text-base md:text-sm border-2 rounded-md",
+        "block w-full lg:w-auto text-center uppercase tracking-wide font-bold text-3xl border-2",
         // Full-size button
         {
-          "px-8 py-4": compact === false,
+          "px-8 py-8": compact === false,
         },
         // Compact button
         {
-          "px-6 py-2": compact === true,
+          "px-2 py-2": compact === true,
         },
         // Specific to when the button is fully dark
         {
@@ -27,7 +27,7 @@ const ButtonContent = ({ button, appearance, compact }) => {
         },
         // Specific to when the button is fully white
         {
-          "bg-white text-primary-600 border-white": appearance === "white",
+          "bg-white text-[#2789cb] border-white": appearance === "white",
         },
         // Specific to when the button is white outlines
         {
@@ -40,7 +40,7 @@ const ButtonContent = ({ button, appearance, compact }) => {
   )
 }
 
-const ButtonLink = ({ button, appearance, compact = false }) => {
+const ButtonLink = ({ button, appearance, compact = true }) => {
   return (
     <CustomLink link={button}>
       <ButtonContent

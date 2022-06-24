@@ -1,85 +1,59 @@
-import classNames from "classnames"
-import { useState } from "react"
-import NextImage from "../elements/image"
-import CustomLink from "../elements/custom-link"
+import classNames from "classnames";
+import NextImage from "../elements/image";
+import { getButtonAppearance } from "../../utils/button";
+import Button from "../elements/button";
 
 const TestimonialsGroup = ({ data }) => {
-  // Only show one testimonial at a time
-  const [selectedTestimonialIndex, setSelectedTestimonialIndex] = useState(0)
-  const selectedTestimonial = data.testimonials[selectedTestimonialIndex]
 
   return (
-    <section className="text-center text-lg bg-gray-200 pt-12 pb-16">
-      <h2 className="title mb-4">{data.title}</h2>
-      <p className="text-gray-700 mb-4">{data.description}</p>
-      <CustomLink link={data.link}>
-        <span className="with-arrow text-blue-700 hover:underline">
-          {data.link.text}
-        </span>
-      </CustomLink>
-      {/* Current testimonial card */}
-      <div className="max-w-5xl w-8/12 sm:w-8/12 bg-white shadow-md sm:shadow-xl mx-auto flex flex-col sm:flex-row mt-10 text-left">
-        <div className="w-full md:w-4/12 flex-shrink-0">
-          <NextImage media={selectedTestimonial.picture} />
-        </div>
-        <div className="px-4 py-4 sm:px-12 sm:pt-12 sm:pb-4 flex flex-col justify-between">
-          <div>
-            <NextImage
-              width="120"
-              height="33"
-              media={selectedTestimonial.logo}
-            />
-            <p className="italic mb-6">
-              &quot;{selectedTestimonial.text}&quot;
-            </p>
-            <p className="font-bold text-base sm:text-sm">
-              {selectedTestimonial.authorName}
-            </p>
-            <p className="text-base sm:text-sm">
-              {selectedTestimonial.authorTitle}
-            </p>
-          </div>
-          <CustomLink
-            link={{
-              url: selectedTestimonial.link,
-              text: "",
-              newTab: false,
-              id: 0,
-            }}
-          >
-            <span className="uppercase tracking-wide text-blue-700 hover:underline  with-arrow sm:self-end mt-6 sm:mt-0">
-              Read story
-            </span>
-          </CustomLink>
-        </div>
-      </div>
-      {/* Change selected testimonial (only if there is more than one) */}
+    <section className="text-center text-lg bg-gray-100 py-36">
+      <h1 className="text-6xl font-bold mb-4">{data.title}</h1>
+      <p className="text-gray-400 mt-12 mb-4">{data.description}</p>
+
       {data.testimonials.length > 1 && (
         <div className="flex flex-row gap-4 mt-10 justify-center">
-          {data.testimonials.map((testimonial, index) => (
-            <button
-              onClick={() => setSelectedTestimonialIndex(index)}
-              className={classNames(
-                // Common classes
-                "rounded-full h-3 w-3",
-                {
-                  "bg-gray-500": index !== selectedTestimonialIndex,
-                  "bg-primary-600": index === selectedTestimonialIndex,
-                }
-              )}
+          {data.testimonials.map((testimonial) => (
+            <div
               key={testimonial.id}
-            />
+              className="px-8 py-8 bg-white sm:px-12 sm:pt-12 sm:pb-4 flex flex-col items-center"
+            >
+              <NextImage width="150" height="130" media={testimonial.logo} />
+              <p className="mt-2 font-bold text-3xl text-[#27C1CB]">
+                {testimonial.text}
+              </p>
+              <ul className="mt-10">
+                {data.feature.map((feature) => (
+                  <div
+                    key={feature.id}
+                    className="flex flex-row items-center gap-3 mb-3"
+                  >
+                    <div className="rounded-full px-2 bg-[#42b0c4] justify-center items-center">
+                      ✓
+                    </div>
+                    <li>{feature.name}</li>
+                  </div>
+                ))}
+              </ul>
+              <div className="mt-12">
+                <Button
+                  button={data.button[0]}
+                  appearance={getButtonAppearance(data.button[0].type, "light")}
+                  type="button"
+                />
+              </div>
+            </div>
           ))}
         </div>
       )}
-      {/* Logos list */}
-      <div className="flex flex-row flex-wrap items-center gap-6 sm:gap-20 justify-center mt-10 px-6 sm:px-0 ">
-        {data.logos.map((logo) => (
-          <NextImage key={logo.id} width="120" height="33" media={logo.logo} />
-        ))}
+      <div className="mt-20">
+        <Button
+          button={data.button[1]}
+          appearance={getButtonAppearance(data.button[1].type, "light")}
+          type="button"
+        />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TestimonialsGroup
+export default TestimonialsGroup;

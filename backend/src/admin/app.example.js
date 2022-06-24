@@ -13,7 +13,7 @@ export default {
       // 'ja',
       // 'ko',
       // 'ms',
-      // 'nl',
+      'nl',
       // 'no',
       // 'pl',
       // 'pt-BR',

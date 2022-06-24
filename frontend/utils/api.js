@@ -162,12 +162,7 @@ export async function getPageData({ slug, locale, preview }) {
                   ... on ComponentSectionsTestimonialsGroup {
                     id
                     description
-                    link {
-                      id
-                      newTab
-                      text
-                      url
-                    }
+
                     logos {
                       id
                       title
@@ -180,13 +175,18 @@ export async function getPageData({ slug, locale, preview }) {
                       logo {
                         ...FileParts
                       }
-                      picture {
-                        ...FileParts
-                      }
                       text
-                      authorName
-                      authorTitle
-                      link
+                    }
+                    button {
+                      id
+                      newTab
+                      text
+                      type
+                      url
+                    }
+                    feature {
+                      id
+                      name
                     }
                     title
                   }
@@ -297,10 +297,6 @@ export async function getGlobalData(locale) {
                   twitterUsername
                 }
                 metaTitleSuffix
-                notificationBanner {
-                  type
-                  text
-                }
                 navbar {
                   logo {
                     ...FileParts

@@ -19,13 +19,13 @@ const Navbar = ({ navbar, pageContext }) => {
   return (
     <>
       {/* The actual navbar */}
-      <nav className="border-gray-200 border-b-2 py-6 sm:py-2">
+      <nav className="mt-8 sm:py-2 relative z-10">
         <div className="container flex flex-row items-center justify-between">
           {/* Content aligned to the left */}
           <div className="flex flex-row items-center">
             <Link href="/">
-              <a className="h-8 w-32">
-                <NextImage width="120" height="33" media={navbar.logo} />
+              <a className="h-8 w-32 pb-20">
+                <NextImage width="120" height="80" media={navbar.logo} />
               </a>
             </Link>
             {/* List of links on desktop */}
@@ -33,7 +33,7 @@ const Navbar = ({ navbar, pageContext }) => {
               {navbar.links.map((navLink) => (
                 <li key={navLink.id}>
                   <CustomLink link={navLink} locale={router.locale}>
-                    <div className="hover:text-gray-900 px-2 py-1">
+                    <div className="text-white text-lg font-extrabold hover:text-gray-900 px-2 py-1">
                       {navLink.text}
                     </div>
                   </CustomLink>
