@@ -3,7 +3,7 @@ import NextImage from "../elements/image";
 
 const Games = ({ data }) => {
   return (
-    <div className="bg-[#5dc4ea] py-48">
+    <main className="bg-[#5dc4ea] py-48">
       <div className="container">
           <h1 className="text-white uppercase font-bold text-7xl text-center">
             {data.title}
@@ -42,7 +42,7 @@ const Games = ({ data }) => {
             ))}
           </div>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -50,7 +50,9 @@
         "sections.pricing",
         "sections.rich-text",
         "sections.testimonials-group",
-        "sections.games"
+        "sections.games",
+        "sections.gamers-testimonial",
+        "sections.fa-qs"
       ],
       "pluginOptions": {
         "i18n": {

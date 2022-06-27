@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_elements_testimonial_cards",
+  "info": {
+    "displayName": "Testimonial Card",
+    "icon": "atlas",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rating": {
+      "type": "integer",
+      "default": 5
+    },
+    "content": {
+      "type": "text"
+    },
+    "auther": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    }
+  }
+}

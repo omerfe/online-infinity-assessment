@@ -170,6 +170,30 @@ export async function getPageData({ slug, locale, preview }) {
                       }
                     }
                   }
+                  ... on ComponentSectionsGamersTestimonial {
+                    id
+                    title
+                    bgImg {
+                      ...FileParts
+                    }
+                    cards {
+                      id
+                      rating
+                      content
+                      auther
+                      role                    
+                    }
+                  }
+                  ... on ComponentSectionsFaQs {
+                    id
+                    title
+                    cards {
+                      id
+                      question
+                      answer
+                      isToggled
+                    }
+                  }
                   ... on ComponentSectionsFeatureRowsGroup {
                     id
                     features {

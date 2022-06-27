@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_question_cards",
+  "info": {
+    "displayName": "Question Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    },
+    "isToggled": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
