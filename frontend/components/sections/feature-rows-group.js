@@ -1,11 +1,11 @@
-import classNames from "classnames"
-import NextImage from "../elements/image"
-import Video from "../elements/video"
-import CustomLink from "../elements/custom-link"
+import classNames from "classnames";
+import NextImage from "../elements/image";
+import Video from "../elements/video";
+import CustomLink from "../elements/custom-link";
 
 const FeatureRowsGroup = ({ data }) => {
   return (
-    <div className="container relative top-40 flex flex-col gap-12 py-80">
+    <div className="container flex flex-col gap-12 py-40">
       {data.features.map((feature, index) => (
         <div
           className={classNames(
@@ -14,6 +14,7 @@ const FeatureRowsGroup = ({ data }) => {
             {
               "lg:flex-row": index % 2 === 0,
               "lg:flex-row-reverse": index % 2 === 1,
+              "mt-60": feature.title === "OVER ONS",
             }
           )}
           key={feature.id}
@@ -38,19 +39,24 @@ const FeatureRowsGroup = ({ data }) => {
           </div>
           {/* Text section */}
           <div className="w-full items-center lg:pr-6 text-lg">
-            <h3 className="text-[#27C1CB] text-7xl font-extrabold">{feature.title}</h3>
-            <p className="my-6 text-[#27C1CB] text-base">{feature.description}</p>
-            <CustomLink link={feature.link}>
-              <div className="text-blue-600 with-arrow hover:underline">
-                {feature.link.text}
-              </div>
-            </CustomLink>
+            <h3 className="text-[#5dc4ea] text-7xl font-extrabold">
+              {feature.title}
+            </h3>
+            <p className="my-6 text-[#5dc4ea] text-base">
+              {feature.description}
+            </p>
+            {feature.link && (
+              <CustomLink link={feature.link}>
+                <div className="text-blue-600 with-arrow hover:underline">
+                  {feature.link.text}
+                </div>
+              </CustomLink>
+            )}
           </div>
-          
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default FeatureRowsGroup
+export default FeatureRowsGroup;

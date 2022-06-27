@@ -27,12 +27,12 @@ const Button = ({
           },
           // Specific to when the button is fully dark
           {
-            "bg-[#2789cb] text-white border-[#2789cb] font-bold":
+            "bg-[#5dc4ea] text-white border-[#5dc4ea] font-bold":
               appearance === "dark",
           },
           // Specific to when the button is dark outlines
           {
-            "text-[#2789cb] border-[#2789cb]":
+            "text-[#5dc4ea] border-[#5dc4ea]":
               appearance === "dark-outline",
           },
           // Specific to when the button is fully white

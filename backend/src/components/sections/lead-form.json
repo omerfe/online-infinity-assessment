@@ -11,9 +11,6 @@
     "title": {
       "type": "string"
     },
-    "emailPlaceholder": {
-      "type": "string"
-    },
     "submitButton": {
       "type": "component",
       "repeatable": false,

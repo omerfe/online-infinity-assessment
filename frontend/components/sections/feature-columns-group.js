@@ -1,6 +1,7 @@
 import NextImage from "../elements/image"
 
 const FeatureColumnsGroup = ({ data }) => {
+  console.log('featureColumsGroupData: ', data);
   return (
     <div className="container flex flex-col lg:flex-row lg:flex-wrap gap-12 align-top py-12">
       {data.features.map((feature) => (

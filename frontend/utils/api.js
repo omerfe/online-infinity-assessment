@@ -93,6 +93,7 @@ export async function getPageData({ slug, locale, preview }) {
                   }
                 }
                 slug
+                shortName
                 metadata {
                   metaTitle
                   metaDescription
@@ -117,18 +118,18 @@ export async function getPageData({ slug, locale, preview }) {
                   }
                   ... on ComponentSectionsHero {
                     id
+                    title
+                    label
+                    description
+                    picture {
+                      ...FileParts
+                    }
                     buttons {
                       id
                       newTab
                       text
                       type
                       url
-                    }
-                    title
-                    description
-                    label
-                    picture {
-                      ...FileParts
                     }
                   }
                   ... on ComponentSectionsFeatureColumnsGroup {
@@ -142,27 +143,54 @@ export async function getPageData({ slug, locale, preview }) {
                       title
                     }
                   }
+                  ... on ComponentSectionsGames {
+                    id
+                    title
+                    gameLinks {
+                      id
+                      url
+                      newTab
+                      text
+                    }
+                    cards {
+                      id
+                      title
+                      description
+                      divider {
+                        ...FileParts
+                      }
+                      userIcon {
+                        ...FileParts
+                      }
+                      ticketIcon {
+                        ...FileParts
+                      }
+                      img {
+                        ...FileParts
+                      }
+                    }
+                  }
                   ... on ComponentSectionsFeatureRowsGroup {
                     id
                     features {
                       id
+                      title
                       description
-                      link {
-                        id
-                        newTab
-                        text
-                        url
-                      }
                       media {
                         ...FileParts
                       }
-                      title
+                      link {
+                        id
+                        url
+                        newTab
+                        text
+                      }
                     }
                   }
                   ... on ComponentSectionsTestimonialsGroup {
                     id
+                    title
                     description
-
                     logos {
                       id
                       title
@@ -179,25 +207,24 @@ export async function getPageData({ slug, locale, preview }) {
                     }
                     button {
                       id
+                      url
                       newTab
                       text
                       type
-                      url
                     }
                     feature {
                       id
                       name
                     }
-                    title
                   }
                   ... on ComponentSectionsLargeVideo {
                     id
-                    description
                     title
-                    poster {
+                    description
+                    video {
                       ...FileParts
                     }
-                    video {
+                    poster {
                       ...FileParts
                     }
                   }
@@ -209,28 +236,27 @@ export async function getPageData({ slug, locale, preview }) {
                     id
                     title
                     plans {
+                      id
+                      name
                       description
                       features {
                         id
                         name
                       }
-                      id
                       isRecommended
-                      name
                       price
                       pricePeriod
                     }
                   }
                   ... on ComponentSectionsLeadForm {
                     id
-                    emailPlaceholder
-                    location
+                    title
                     submitButton {
                       id
                       text
                       type
                     }
-                    title
+                    location
                   }
                 }
               }
@@ -284,9 +310,6 @@ export async function getGlobalData(locale) {
             data {
               id
               attributes {
-                favicon {
-                  ...FileParts
-                }
                 metadata {
                   metaTitle
                   metaDescription
@@ -297,6 +320,9 @@ export async function getGlobalData(locale) {
                   twitterUsername
                 }
                 metaTitleSuffix
+                favicon {
+                  ...FileParts
+                }
                 navbar {
                   logo {
                     ...FileParts

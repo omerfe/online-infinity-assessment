@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_games",
+  "info": {
+    "displayName": "Games",
+    "icon": "basketball-ball",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "gameLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
+    },
+    "cards": {
+      "displayName": "card",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card"
+    }
+  }
+}

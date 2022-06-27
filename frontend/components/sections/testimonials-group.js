@@ -4,7 +4,7 @@ import { getButtonAppearance } from "../../utils/button";
 import Button from "../elements/button";
 
 const TestimonialsGroup = ({ data }) => {
-
+  //Groepen Page
   return (
     <section className="text-center text-lg bg-gray-100 py-36">
       <h1 className="text-6xl font-bold mb-4">{data.title}</h1>
@@ -18,7 +18,7 @@ const TestimonialsGroup = ({ data }) => {
               className="px-8 py-8 bg-white sm:px-12 sm:pt-12 sm:pb-4 flex flex-col items-center"
             >
               <NextImage width="150" height="130" media={testimonial.logo} />
-              <p className="mt-2 font-bold text-3xl text-[#27C1CB]">
+              <p className="mt-2 font-bold text-3xl text-[#5dc4ea]">
                 {testimonial.text}
               </p>
               <ul className="mt-10">
@@ -27,7 +27,7 @@ const TestimonialsGroup = ({ data }) => {
                     key={feature.id}
                     className="flex flex-row items-center gap-3 mb-3"
                   >
-                    <div className="rounded-full px-2 bg-[#42b0c4] justify-center items-center">
+                    <div className="max-w-xs rounded-full px-2 bg-[#5dc4ea] justify-center items-center">
                       ✓
                     </div>
                     <li>{feature.name}</li>
